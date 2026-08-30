@@ -21,27 +21,30 @@ html{
 }
 
 body{
-    background:#08000f;
-    color:white;
     font-family:'Poppins',sans-serif;
+    background:#07000d;
+    color:white;
     overflow-x:hidden;
 }
 
-/* =========================
+/* =====================================================
    OPENING
-========================= */
+===================================================== */
 
 #opening{
     position:fixed;
     inset:0;
     z-index:9999;
-    background:
-        radial-gradient(circle at center,#3b075c,#13001f 45%,#050008);
+
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
-    transition:1s ease;
+
+    background:
+        radial-gradient(circle at center,#3d0960 0%,#150020 45%,#040006 100%);
+
+    transition:1.2s ease;
 }
 
 .open-content{
@@ -51,41 +54,53 @@ body{
 }
 
 .open-small{
-    letter-spacing:5px;
-    font-size:13px;
-    color:#dfbaff;
+    font-size:12px;
+    letter-spacing:6px;
+    color:#dcb8ff;
     margin-bottom:15px;
 }
 
 .open-title{
     font-family:'Great Vibes',cursive;
-    font-size:clamp(70px,13vw,130px);
+    font-size:clamp(75px,14vw,145px);
+
     text-shadow:
-        0 0 10px #ff62b0,
-        0 0 30px #b52cff,
-        0 0 70px #b52cff;
+        0 0 12px #ff65b2,
+        0 0 35px #a52eff,
+        0 0 80px #a52eff;
 }
 
 .open-subtitle{
     margin:15px 0 35px;
-    color:#ddd;
+    color:#ded3e4;
 }
 
 .open-btn{
-    border:none;
-    background:linear-gradient(135deg,#9b32e8,#ff579e);
-    color:white;
     padding:16px 38px;
     border-radius:50px;
+    border:1px solid rgba(255,255,255,.25);
+
+    background:
+        linear-gradient(135deg,#9230e8,#ff579f);
+
+    color:white;
+    font-family:'Poppins';
     font-size:15px;
+
     cursor:pointer;
-    box-shadow:0 0 30px #a934ed;
+
+    box-shadow:
+        0 0 25px rgba(188,49,255,.5);
+
     transition:.3s;
 }
 
 .open-btn:hover{
     transform:scale(1.08);
+    box-shadow:
+        0 0 45px rgba(255,75,160,.8);
 }
+
 
 /* stars */
 
@@ -93,41 +108,49 @@ body{
     position:absolute;
     width:3px;
     height:3px;
-    background:white;
     border-radius:50%;
+    background:white;
     animation:twinkle 2s infinite alternate;
 }
 
 @keyframes twinkle{
-    from{opacity:.2;}
-    to{opacity:1;transform:scale(1.5);}
+    from{
+        opacity:.15;
+        transform:scale(.6);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1.4);
+    }
 }
 
 
-/* =========================
+/* =====================================================
    MAIN
-========================= */
+===================================================== */
 
 #main{
     display:none;
 }
 
 
-/* =========================
+/* =====================================================
    HERO
-========================= */
+===================================================== */
 
 .hero{
     min-height:100vh;
     position:relative;
     overflow:hidden;
+
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
 
     background:
-        radial-gradient(circle at center,#35065d,#100018 55%,#050008);
+        radial-gradient(circle at center,#37065f,#100017 55%,#040006);
 }
 
 #fireworks{
@@ -145,304 +168,565 @@ body{
 }
 
 .hero-small{
-    letter-spacing:5px;
     font-size:13px;
-    color:#e5c5ff;
+    letter-spacing:5px;
+    color:#e7ccff;
 }
 
 .hero h1{
     font-family:'Great Vibes',cursive;
     font-size:clamp(70px,13vw,150px);
     line-height:1;
+
     margin-top:15px;
 
     text-shadow:
         0 0 15px #ff5bab,
         0 0 40px #ff5bab,
-        0 0 80px #9b2eff;
+        0 0 80px #9a2cff;
 }
 
 .hero h2{
-    font-size:clamp(28px,5vw,55px);
-    color:#f7d9ff;
+    font-size:clamp(30px,5vw,58px);
+    color:#f8dcff;
     margin-top:15px;
 }
 
 .hero p{
-    color:#d7c5df;
+    color:#d5c5dd;
     margin-top:20px;
 }
 
-.next-btn{
-    margin-top:45px;
-    padding:14px 32px;
-    border:none;
-    border-radius:50px;
-    background:rgba(255,255,255,.1);
-    border:1px solid rgba(255,255,255,.25);
-    color:white;
-    font-family:'Poppins';
-    cursor:pointer;
-    transition:.3s;
-}
 
-.next-btn:hover{
-    background:rgba(255,255,255,.2);
-    transform:translateY(-3px);
-}
-
-
-/* =========================
+/* =====================================================
    BALLOONS
-========================= */
+===================================================== */
 
 .balloon{
     position:absolute;
+
     width:60px;
     height:76px;
+
     border-radius:50%;
-    background:linear-gradient(135deg,#ff73b4,#8d2ce5);
-    animation:float 5s ease-in-out infinite;
-    opacity:.8;
+
+    background:
+        linear-gradient(135deg,#ff73b5,#8e2de2);
+
+    opacity:.75;
+
+    animation:floatBalloon 5s ease-in-out infinite;
 }
 
-.balloon:after{
+.balloon::after{
     content:"";
+
     position:absolute;
+
     width:1px;
     height:110px;
-    background:rgba(255,255,255,.4);
+
+    background:rgba(255,255,255,.35);
+
     left:50%;
     top:72px;
 }
 
-.b1{left:7%;bottom:15%;}
-.b2{right:8%;bottom:20%;animation-delay:1s;}
-.b3{left:12%;top:12%;transform:scale(.7);animation-delay:2s;}
-.b4{right:13%;top:15%;transform:scale(.8);animation-delay:3s;}
+.b1{
+    left:7%;
+    bottom:15%;
+}
 
-@keyframes float{
-    0%,100%{transform:translateY(0) rotate(-4deg);}
-    50%{transform:translateY(-25px) rotate(5deg);}
+.b2{
+    right:8%;
+    bottom:20%;
+    animation-delay:1s;
+}
+
+.b3{
+    left:12%;
+    top:12%;
+    transform:scale(.7);
+    animation-delay:2s;
+}
+
+.b4{
+    right:13%;
+    top:15%;
+    transform:scale(.8);
+    animation-delay:3s;
+}
+
+@keyframes floatBalloon{
+
+    0%,100%{
+        transform:translateY(0) rotate(-4deg);
+    }
+
+    50%{
+        transform:translateY(-25px) rotate(5deg);
+    }
+
 }
 
 
-/* =========================
-   STORY SECTIONS
-========================= */
+/* =====================================================
+   NEXT BUTTON
+===================================================== */
+
+.next-btn{
+
+    margin-top:42px;
+
+    padding:14px 32px;
+
+    border-radius:50px;
+
+    border:1px solid rgba(255,255,255,.2);
+
+    background:rgba(255,255,255,.07);
+
+    color:white;
+
+    font-family:'Poppins';
+
+    cursor:pointer;
+
+    transition:.35s;
+}
+
+.next-btn:hover{
+    transform:translateY(-4px) scale(1.04);
+    background:rgba(255,255,255,.14);
+}
+
+
+/* =====================================================
+   STORY BASE
+===================================================== */
 
 .story{
+
     min-height:100vh;
+
     padding:90px 20px;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     text-align:center;
-    background:
-        linear-gradient(180deg,#0b0014,#160020);
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:background 1s ease;
 }
 
 .story-card{
+
     width:100%;
     max-width:850px;
+
     padding:55px 40px;
+
     border-radius:30px;
 
     background:rgba(255,255,255,.055);
+
     border:1px solid rgba(255,255,255,.12);
 
-    backdrop-filter:blur(15px);
+    backdrop-filter:blur(18px);
 
     box-shadow:
-        0 25px 80px rgba(128,0,255,.18);
+        0 25px 80px rgba(0,0,0,.35);
 
-    animation:cardIn .8s ease;
+    animation:cardAppear .9s ease;
 }
 
-@keyframes cardIn{
+@keyframes cardAppear{
+
     from{
         opacity:0;
-        transform:translateY(35px);
+        transform:translateY(35px) scale(.98);
     }
+
     to{
         opacity:1;
-        transform:translateY(0);
+        transform:translateY(0) scale(1);
     }
+
 }
 
 .title{
+
     font-family:'Great Vibes',cursive;
+
     font-size:65px;
-    color:#ff8bc9;
-    margin-bottom:25px;
+
+    color:#ff91ca;
+
+    margin-bottom:28px;
+
+    text-shadow:
+        0 0 15px rgba(255,90,180,.4);
 }
 
 .story-text{
+
     font-size:16px;
+
     line-height:2;
+
     color:#eee;
 }
 
 
-/* =========================
-   MEMORY CARDS
-========================= */
+/* =====================================================
+   MEMORY 1
+   JUNGKOOK / PURPLE CONCERT
+===================================================== */
 
-.memory-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-    gap:25px;
-    margin-top:35px;
+#memory1{
+
+    background:
+        radial-gradient(circle at 50% 30%,
+        rgba(136,40,255,.35),
+        transparent 45%),
+        linear-gradient(#08000f,#170024);
 }
 
-.memory{
-    padding:30px 20px;
-    border-radius:20px;
-    background:rgba(255,255,255,.06);
-    border:1px solid rgba(255,255,255,.1);
-    transition:.4s;
-}
+#memory1 .story-card{
 
-.memory:hover{
-    transform:translateY(-8px) scale(1.02);
-    background:rgba(255,255,255,.1);
-}
-
-.memory-number{
-    font-size:13px;
-    color:#cf8cff;
-    letter-spacing:3px;
-    margin-bottom:15px;
-}
-
-.memory h3{
-    font-family:'Great Vibes',cursive;
-    font-size:34px;
-    color:#ff9dce;
-    margin-bottom:12px;
-}
-
-.memory p{
-    font-size:14px;
-    line-height:1.8;
-    color:#ddd;
+    box-shadow:
+        0 0 80px rgba(145,50,255,.18);
 }
 
 
-/* =========================
-   NEXT HEART TRANSITION
-========================= */
+/* =====================================================
+   MEMORY 2
+   ANSA / FUN
+===================================================== */
 
-.heart-transition{
+#memory2{
+
+    background:
+        radial-gradient(circle at 30% 30%,
+        rgba(255,105,180,.25),
+        transparent 40%),
+        linear-gradient(#17000d,#280018);
+}
+
+#memory2 .story-card{
+
+    border-color:rgba(255,130,190,.2);
+
+}
+
+
+/* =====================================================
+   MEMORY 3
+   WINTER CONCERT
+===================================================== */
+
+#memory3{
+
+    background:
+        radial-gradient(circle at 50% 20%,
+        rgba(120,200,255,.18),
+        transparent 45%),
+        linear-gradient(#020b16,#071725);
+}
+
+#memory3 .title{
+
+    color:#aee6ff;
+
+    text-shadow:
+        0 0 20px rgba(100,210,255,.5);
+}
+
+#memory3 .story-card{
+
+    border-color:rgba(150,220,255,.18);
+
+}
+
+
+/* =====================================================
+   MEMORY 4
+   LAST ROOM
+===================================================== */
+
+#memory4{
+
+    background:
+        radial-gradient(circle at 50% 40%,
+        rgba(255,177,103,.16),
+        transparent 45%),
+        linear-gradient(#100a06,#21130b);
+}
+
+#memory4 .title{
+
+    color:#ffd09b;
+
+    text-shadow:
+        0 0 18px rgba(255,180,100,.4);
+}
+
+#memory4 .story-card{
+
+    border-color:rgba(255,190,120,.18);
+
+}
+
+
+/* =====================================================
+   MEMORY 5
+   MISS / CLASS
+===================================================== */
+
+#memory5{
+
+    background:
+        radial-gradient(circle at center,
+        rgba(160,90,255,.22),
+        transparent 50%),
+        linear-gradient(#0c0615,#170c25);
+}
+
+
+/* =====================================================
+   HEART TRANSITION
+===================================================== */
+
+#loveTransition{
+
     position:fixed;
+
     inset:0;
-    z-index:5000;
+
+    z-index:8000;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
-    background:rgba(10,0,20,.94);
+    text-align:center;
+
+    pointer-events:none;
 
     opacity:0;
+
     visibility:hidden;
 
-    transition:.4s;
+    background:
+        radial-gradient(circle,
+        rgba(70,0,80,.96),
+        rgba(7,0,13,.98));
+
+    transition:.45s ease;
 }
 
-.heart-transition.show{
+#loveTransition.show{
+
     opacity:1;
     visibility:visible;
-}
 
-.heart-content{
-    text-align:center;
-}
-
-.big-heart{
-    font-size:100px;
-    animation:heartBeat .8s infinite;
-    filter:drop-shadow(0 0 25px #ff4fa4);
-}
-
-.love-text{
-    font-family:'Great Vibes',cursive;
-    font-size:55px;
-    color:#ff8ac6;
-    margin-top:15px;
-}
-
-.love-sub{
-    margin-top:5px;
-    color:#ddd;
-}
-
-@keyframes heartBeat{
-    0%,100%{transform:scale(1);}
-    50%{transform:scale(1.25);}
 }
 
 
-/* =========================
-   FLOATING HEARTS
-========================= */
+/* glowing heart */
 
-.floating-heart{
-    position:fixed;
-    bottom:-30px;
-    z-index:6000;
-    pointer-events:none;
-    font-size:20px;
+.love-heart{
 
-    animation:heartFloat 2.5s ease-out forwards;
+    position:relative;
+
+    width:110px;
+    height:100px;
+
+    margin:auto;
+
+    transform:rotate(-45deg);
+
+    background:#ff5ba8;
+
+    filter:
+        drop-shadow(0 0 15px #ff5ba8)
+        drop-shadow(0 0 40px #ff5ba8);
+
+    animation:
+        heartReveal 1.2s ease forwards;
 }
 
-@keyframes heartFloat{
+.love-heart::before,
+.love-heart::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:110px;
+    height:100px;
+
+    background:#ff5ba8;
+
+    border-radius:50%;
+}
+
+.love-heart::before{
+
+    top:-55px;
+    left:0;
+
+}
+
+.love-heart::after{
+
+    left:55px;
+    top:0;
+
+}
+
+
+@keyframes heartReveal{
+
     0%{
-        transform:translateY(0) scale(.5) rotate(0);
+        transform:rotate(-45deg) scale(0);
         opacity:0;
     }
 
-    15%{
+    45%{
+        transform:rotate(-45deg) scale(1.25);
+        opacity:1;
+    }
+
+    70%{
+        transform:rotate(-45deg) scale(.92);
+    }
+
+    100%{
+        transform:rotate(-45deg) scale(1);
+    }
+
+}
+
+
+/* text */
+
+.love-message{
+
+    margin-top:80px;
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:clamp(45px,7vw,75px);
+
+    color:#ff9dce;
+
+    opacity:0;
+
+    transform:translateY(15px);
+
+    animation:
+        textReveal 1s ease .5s forwards;
+
+    text-shadow:
+        0 0 20px rgba(255,90,180,.7);
+}
+
+@keyframes textReveal{
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+/* little sparkles */
+
+.sparkle{
+
+    position:fixed;
+
+    z-index:8500;
+
+    pointer-events:none;
+
+    font-size:20px;
+
+    animation:sparkleFloat 1.8s ease-out forwards;
+}
+
+@keyframes sparkleFloat{
+
+    0%{
+        opacity:0;
+        transform:translate(0,0) scale(.3);
+    }
+
+    20%{
         opacity:1;
     }
 
     100%{
-        transform:
-            translateY(-100vh)
-            translateX(var(--x))
-            scale(1.4)
-            rotate(35deg);
         opacity:0;
+        transform:
+            translate(var(--sx),var(--sy))
+            scale(1.4)
+            rotate(180deg);
     }
+
 }
 
 
-/* =========================
-   FINAL GIFT
-========================= */
+/* =====================================================
+   FINAL
+===================================================== */
 
 .final-section{
+
     min-height:100vh;
+
     padding:100px 20px;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
     text-align:center;
 
     background:
-        radial-gradient(circle,#31004d,#09000f 65%);
+        radial-gradient(circle at center,#38004e,#09000f 65%);
 }
 
 .gift{
+
     width:150px;
     height:125px;
-    background:linear-gradient(135deg,#ff4d9c,#8d2be0);
-    position:relative;
+
     margin:50px auto 35px;
+
+    position:relative;
+
     cursor:pointer;
+
     border-radius:8px;
-    box-shadow:0 20px 60px rgba(255,50,160,.35);
+
+    background:
+        linear-gradient(135deg,#ff4d9d,#8e2be2);
+
+    box-shadow:
+        0 20px 60px rgba(255,50,160,.35);
+
     transition:.4s;
 }
 
@@ -450,126 +734,192 @@ body{
     transform:scale(1.08);
 }
 
-.gift:before{
+.gift::before{
+
     content:"";
+
     position:absolute;
+
     width:25px;
     height:125px;
-    background:#ffe16a;
+
+    background:#ffe26a;
+
     left:50%;
+
     transform:translateX(-50%);
 }
 
 .gift-lid{
+
     position:absolute;
+
     width:175px;
     height:35px;
-    top:-25px;
+
     left:-12px;
+    top:-25px;
+
     border-radius:7px;
 
-    background:linear-gradient(135deg,#ff6caf,#a132e8);
+    background:
+        linear-gradient(135deg,#ff6caf,#a132e8);
 
     transition:.8s;
 }
 
 .gift-ribbon{
+
     position:absolute;
+
     width:25px;
     height:35px;
-    top:-25px;
+
     left:50%;
+    top:-25px;
+
     transform:translateX(-50%);
-    background:#ffe16a;
+
+    background:#ffe26a;
 }
 
 .gift.open .gift-lid{
+
     transform:
         translateY(-90px)
         rotate(-8deg);
 }
 
+
+/* final */
+
 .final-message{
+
     display:none;
+
     max-width:750px;
-    animation:appear 1s ease;
+
+    animation:finalAppear 1s ease;
 }
 
 .final-message h2{
+
     font-family:'Great Vibes',cursive;
-    font-size:75px;
-    color:#ff91cb;
+
+    font-size:clamp(55px,9vw,90px);
+
+    color:#ff91ca;
 
     text-shadow:
         0 0 20px #ff5bab,
-        0 0 45px #9b2eff;
+        0 0 50px #9b2eff;
 }
 
 .final-message p{
+
     margin-top:20px;
-    line-height:2;
+
     color:#ddd;
+
+    line-height:2;
 }
 
 .final-heart{
-    font-size:110px;
-    margin-top:35px;
-    animation:heartBeat .9s infinite;
-    filter:drop-shadow(0 0 35px #ff4fa4);
+
+    font-size:85px;
+
+    margin:25px;
+
+    animation:
+        finalHeart 1.3s ease-in-out infinite;
+
+    filter:
+        drop-shadow(0 0 20px #ff4fa4);
 }
 
-@keyframes appear{
+@keyframes finalHeart{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.18);
+    }
+
+}
+
+@keyframes finalAppear{
+
     from{
         opacity:0;
-        transform:translateY(30px);
+        transform:translateY(40px);
     }
 
     to{
         opacity:1;
         transform:translateY(0);
     }
+
 }
 
 
-/* =========================
+/* =====================================================
    CONFETTI
-========================= */
+===================================================== */
 
 .confetti{
+
     position:fixed;
+
     top:-20px;
+
     width:9px;
     height:14px;
-    z-index:7000;
+
+    z-index:9000;
+
     pointer-events:none;
 
-    animation:confettiFall 4s linear forwards;
+    animation:
+        confettiFall 4s linear forwards;
 }
 
 @keyframes confettiFall{
+
     to{
+
         transform:
             translateY(110vh)
             rotate(720deg);
+
         opacity:0;
     }
+
 }
 
 
-/* =========================
+/* =====================================================
    FOOTER
-========================= */
+===================================================== */
 
 footer{
-    background:#050008;
+
     padding:30px;
+
     text-align:center;
-    color:#8e7c98;
+
+    background:#040006;
+
+    color:#8d7b97;
+
     font-size:13px;
 }
 
 
-/* MOBILE */
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media(max-width:600px){
 
@@ -578,19 +928,19 @@ footer{
     }
 
     .title{
-        font-size:52px;
+        font-size:53px;
     }
 
     .story-text{
         font-size:15px;
     }
 
-    .final-message h2{
-        font-size:55px;
+    .love-heart{
+        transform:rotate(-45deg) scale(.75);
     }
 
-    .love-text{
-        font-size:42px;
+    .love-message{
+        font-size:48px;
     }
 
 }
@@ -601,9 +951,9 @@ footer{
 <body>
 
 
-<!-- =========================
+<!-- =====================================================
      OPENING
-========================= -->
+===================================================== -->
 
 <section id="opening">
 
@@ -633,16 +983,16 @@ footer{
 
 
 
-<!-- =========================
+<!-- =====================================================
      MAIN
-========================= -->
+===================================================== -->
 
 <main id="main">
 
 
 <!-- HERO -->
 
-<section class="hero" id="hero">
+<section class="hero">
 
     <canvas id="fireworks"></canvas>
 
@@ -669,8 +1019,11 @@ footer{
             Because one birthday wish wasn't enough.
         </p>
 
-        <button class="next-btn" onclick="nextSection('story1')">
-            Continue 💗
+        <button class="next-btn"
+        onclick="nextSection('memory1')">
+
+            Start the memories 💗
+
         </button>
 
     </div>
@@ -679,14 +1032,16 @@ footer{
 
 
 
-<!-- STORY 1 -->
+<!-- =====================================================
+     MEMORY 1
+===================================================== -->
 
-<section class="story" id="story1">
+<section class="story" id="memory1">
 
     <div class="story-card">
 
         <div class="title">
-            Do You Remember? 🥹
+            Do You Remember? 💜
         </div>
 
         <div class="story-text">
@@ -699,8 +1054,15 @@ footer{
             Somehow, no matter what we started talking about,
             we'd always end up talking about him.
 
-            We could literally spend hours on the same topic
-            and still somehow have something else to say. 😂💗
+            <br><br>
+
+            We could literally spend hours talking about the
+            same thing and somehow still have something else
+            to say.
+
+            <br><br>
+
+            I honestly don't know how we never got bored. 😂💗
 
             <br><br>
 
@@ -709,8 +1071,11 @@ footer{
 
         </div>
 
-        <button class="next-btn" onclick="nextSection('story2')">
-            I remember this 😭💗
+        <button class="next-btn"
+        onclick="nextSection('memory2')">
+
+            Next memory ✨
+
         </button>
 
     </div>
@@ -719,42 +1084,49 @@ footer{
 
 
 
-<!-- STORY 2 -->
+<!-- =====================================================
+     MEMORY 2
+===================================================== -->
 
-<section class="story" id="story2">
+<section class="story" id="memory2">
 
     <div class="story-card">
 
         <div class="title">
-            Our Little Secrets 🤫
+            Ansa & The Swing 😂
         </div>
 
         <div class="story-text">
 
-            And remember that one time when you, Taiba and I
-            secretly said something to Mariam and Amna? 😭😂
+            And Maliha, do you remember when Ansa fell from
+            the swing? 😭😂
 
             <br><br>
 
-            We were trying SO hard to keep it between us
-            while acting completely normal.
+            It happened so suddenly that for a second we were
+            just completely shocked.
 
             <br><br>
 
-            I don't even know why it was so funny,
-            but somehow the whole situation became one of
-            those memories that still makes me laugh.
+            And then somehow we couldn't stop laughing. 😭
 
             <br><br>
 
-            Honestly, our friendship has always been full of
-            these tiny little moments that nobody else would
-            understand the same way we do.
+            I know we probably shouldn't have found it that funny,
+            but honestly, that moment became one of those silly
+            memories that still makes me laugh whenever I remember it.
+
+            <br><br>
+
+            These random little moments were honestly the best. 💗
 
         </div>
 
-        <button class="next-btn" onclick="nextSection('story3')">
-            Next memory 💕
+        <button class="next-btn"
+        onclick="nextSection('memory3')">
+
+            Next memory 🎀
+
         </button>
 
     </div>
@@ -763,9 +1135,143 @@ footer{
 
 
 
-<!-- STORY 3 -->
+<!-- =====================================================
+     MEMORY 3
+===================================================== -->
 
-<section class="story" id="story3">
+<section class="story" id="memory3">
+
+    <div class="story-card">
+
+        <div class="title">
+            Our Winter Concert ❄️🎤
+        </div>
+
+        <div class="story-text">
+
+            Do you remember those winter days when the class
+            would be almost completely empty?
+
+            <br><br>
+
+            Instead of just sitting there quietly, we'd turn the
+            back of the classroom into our own little stage.
+
+            <br><br>
+
+            And suddenly...
+
+            <br>
+
+            CONCERT TIME. 😭😂🎤
+
+            <br><br>
+
+            We'd pretend we were actually performing on a huge
+            stage, completely forgetting that we were literally
+            just standing at the back of an empty classroom.
+
+            <br><br>
+
+            No audience.
+
+            No real stage.
+
+            No actual concert.
+
+            <br><br>
+
+            Just us, our imagination, and way too much confidence. 😂💗
+
+            <br><br>
+
+            And somehow, those silly winter days became some
+            of my favourite memories.
+
+        </div>
+
+        <button class="next-btn"
+        onclick="nextSection('memory4')">
+
+            Next memory ❄️
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MEMORY 4
+===================================================== -->
+
+<section class="story" id="memory4">
+
+    <div class="story-card">
+
+        <div class="title">
+            The Last Room 🏫
+        </div>
+
+        <div class="story-text">
+
+            Do you remember that last room in school?
+
+            <br><br>
+
+            The one where we'd sit together and just talk for
+            what felt like hours?
+
+            <br><br>
+
+            We'd talk about absolutely everything and nothing
+            at the same time. 😂
+
+            <br><br>
+
+            Random stories, random jokes, little things about
+            our day... somehow every conversation became fun
+            just because we were together.
+
+            <br><br>
+
+            We didn't need anything special.
+
+            We'd just sit there and talk.
+
+            <br><br>
+
+            Looking back, I think those quiet little conversations
+            were some of the best parts of our school days. 🤍
+
+            <br><br>
+
+            I wish we could go back to that room for one more day
+            and have one of those completely random conversations
+            again.
+
+        </div>
+
+        <button class="next-btn"
+        onclick="nextSection('memory5')">
+
+            One more memory... 💗
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MEMORY 5
+===================================================== -->
+
+<section class="story" id="memory5">
 
     <div class="story-card">
 
@@ -775,14 +1281,14 @@ footer{
 
         <div class="story-text">
 
-            And then there was that one time Miss told us
-            to leave the class and go outside...
+            And then there was that one time Miss told us to
+            leave the class and go outside...
 
             <br><br>
 
             And honestly?
 
-            We were not exactly sad about it. 😭😂
+            We weren't exactly sad about it. 😭😂
 
             <br><br>
 
@@ -793,90 +1299,25 @@ footer{
 
             <br><br>
 
-            It was such a simple moment,
-            but somehow those are the moments I remember most.
+            It was such a simple moment, but somehow those
+            are the moments I remember the most.
+
+            <br><br>
+
+            Maybe that's what makes our friendship special.
+
+            <br>
+
+            We could turn even the most ordinary day into
+            something worth remembering. 🎀
 
         </div>
 
-        <button class="next-btn" onclick="nextSection('memories')">
-            There's more... ✨
-        </button>
+        <button class="next-btn"
+        onclick="nextSection('final')">
 
-    </div>
-
-</section>
-
-
-
-<!-- MEMORIES -->
-
-<section class="story" id="memories">
-
-    <div class="story-card">
-
-        <div class="title">
-            Our Little Memories 🎀
-        </div>
-
-        <div class="memory-grid">
-
-            <div class="memory">
-
-                <div class="memory-number">
-                    01
-                </div>
-
-                <h3>
-                    Random Talks
-                </h3>
-
-                <p>
-                    The conversations that started about one thing
-                    and somehow ended somewhere completely different. 😂
-                </p>
-
-            </div>
-
-
-            <div class="memory">
-
-                <div class="memory-number">
-                    02
-                </div>
-
-                <h3>
-                    Silly Laughs
-                </h3>
-
-                <p>
-                    Those moments when absolutely nothing was funny,
-                    yet we couldn't stop laughing.
-                </p>
-
-            </div>
-
-
-            <div class="memory">
-
-                <div class="memory-number">
-                    03
-                </div>
-
-                <h3>
-                    School Days
-                </h3>
-
-                <p>
-                    Ordinary school days that became special
-                    simply because we were together.
-                </p>
-
-            </div>
-
-        </div>
-
-        <button class="next-btn" onclick="nextSection('final')">
             One last surprise... 🎁
+
         </button>
 
     </div>
@@ -885,7 +1326,9 @@ footer{
 
 
 
-<!-- FINAL -->
+<!-- =====================================================
+     FINAL
+===================================================== -->
 
 <section class="final-section" id="final">
 
@@ -899,15 +1342,19 @@ footer{
             I saved something special for the end.
         </p>
 
-        <div class="gift" id="gift" onclick="openGift()">
+        <div class="gift"
+        id="gift"
+        onclick="openGift()">
 
             <div class="gift-lid"></div>
+
             <div class="gift-ribbon"></div>
 
         </div>
 
 
-        <div class="final-message" id="finalMessage">
+        <div class="final-message"
+        id="finalMessage">
 
             <div class="final-heart">
                 💗
@@ -921,12 +1368,12 @@ footer{
 
                 I hope this new year of your life brings you
                 countless reasons to smile, beautiful memories,
-                happiness and success.
+                happiness, success and everything your heart wishes for.
 
                 <br><br>
 
                 Thank you for all the random conversations,
-                stupid jokes, little secrets, laughs,
+                silly jokes, laughs, school memories,
                 and all those ordinary moments that somehow
                 became unforgettable.
 
@@ -934,20 +1381,21 @@ footer{
 
                 I may not say it every day...
 
-                <br>
+                <br><br>
 
-                but I love you sooo much, bestie. 💗
+                <strong>
+                    I LOVE YOU SOOO MUCH, MALIHA. 💗
+                </strong>
 
                 <br><br>
 
-                Stay happy, stay amazing,
-                and never change the beautiful person you are.
+                Here's to another year of memories,
+                laughter, random conversations,
+                and probably way too many Jungkook discussions. 😭😂💜
 
                 <br><br>
 
-                Here's to another year of us,
-                more memories, more laughter,
-                and probably more Jungkook conversations. 😭😂💗
+                Happy Birthday once again. 🎂🎀
 
             </p>
 
@@ -970,22 +1418,18 @@ footer{
 
 
 
-<!-- HEART TRANSITION -->
+<!-- =====================================================
+     LOVE TRANSITION
+===================================================== -->
 
-<div class="heart-transition" id="heartTransition">
+<div id="loveTransition">
 
-    <div class="heart-content">
+    <div>
 
-        <div class="big-heart">
-            💗
-        </div>
+        <div class="love-heart"></div>
 
-        <div class="love-text">
-            I love you sooo much!
-        </div>
-
-        <div class="love-sub">
-            my favourite bestie 🎀
+        <div class="love-message">
+            I love you sooo much, Maliha 💗
         </div>
 
     </div>
@@ -996,17 +1440,19 @@ footer{
 
 <script>
 
-/* =========================
+/* =====================================================
    STARS
-========================= */
+===================================================== */
 
-const stars = document.getElementById("stars");
+const starsContainer =
+    document.getElementById("stars");
 
-for(let i=0;i<100;i++){
+for(let i=0;i<110;i++){
 
-    const star = document.createElement("div");
+    const star =
+        document.createElement("div");
 
-    star.className = "star";
+    star.className="star";
 
     star.style.left =
         Math.random()*100+"%";
@@ -1017,14 +1463,14 @@ for(let i=0;i<100;i++){
     star.style.animationDelay =
         Math.random()*2+"s";
 
-    stars.appendChild(star);
+    starsContainer.appendChild(star);
+
 }
 
 
-
-/* =========================
+/* =====================================================
    OPEN WEBSITE
-========================= */
+===================================================== */
 
 function openWebsite(){
 
@@ -1044,103 +1490,120 @@ function openWebsite(){
 
         startFireworks();
 
-        createConfetti(150);
+        createConfetti(160);
 
-    },1000);
+    },1100);
 
 }
 
 
-
-/* =========================
+/* =====================================================
    NEXT SECTION
-========================= */
+===================================================== */
 
 function nextSection(id){
 
-    showLoveAnimation();
+    showLoveTransition();
 
     setTimeout(()=>{
 
-        document
-            .getElementById(id)
-            .scrollIntoView({
-                behavior:"smooth"
-            });
+        const target =
+            document.getElementById(id);
 
-    },1700);
+        target.scrollIntoView({
+            behavior:"smooth",
+            block:"start"
+        });
+
+    },1800);
 
 }
 
 
-
-/* =========================
+/* =====================================================
    LOVE TRANSITION
-========================= */
+===================================================== */
 
-function showLoveAnimation(){
+function showLoveTransition(){
 
     const overlay =
-        document.getElementById("heartTransition");
+        document.getElementById("loveTransition");
 
     overlay.classList.add("show");
 
-    createFloatingHearts(25);
+    createSparkles(35);
 
     setTimeout(()=>{
 
         overlay.classList.remove("show");
 
-    },1500);
+    },1650);
 
 }
 
 
+/* =====================================================
+   SPARKLES
+===================================================== */
 
-/* =========================
-   FLOATING HEARTS
-========================= */
+function createSparkles(amount){
 
-function createFloatingHearts(amount){
+    const symbols=[
+        "✦",
+        "✧",
+        "♡",
+        "♥",
+        "⋆",
+        "✨"
+    ];
 
     for(let i=0;i<amount;i++){
 
-        const heart =
+        const sparkle =
             document.createElement("div");
 
-        heart.className =
-            "floating-heart";
+        sparkle.className="sparkle";
 
-        heart.innerHTML =
-            ["💗","💕","💖","💞","💓"]
-            [Math.floor(Math.random()*5)];
+        sparkle.innerHTML =
+            symbols[
+                Math.floor(
+                    Math.random()*symbols.length
+                )
+            ];
 
-        heart.style.left =
-            Math.random()*100+"vw";
+        sparkle.style.left =
+            "50%";
 
-        heart.style.setProperty(
-            "--x",
-            (Math.random()*200-100)+"px"
+        sparkle.style.top =
+            "50%";
+
+        sparkle.style.setProperty(
+            "--sx",
+            (Math.random()*500-250)+"px"
         );
 
-        heart.style.animationDelay =
-            Math.random()*0.7+"s";
+        sparkle.style.setProperty(
+            "--sy",
+            (Math.random()*500-250)+"px"
+        );
 
-        document.body.appendChild(heart);
+        sparkle.style.animationDelay =
+            Math.random()*.35+"s";
+
+        document.body.appendChild(sparkle);
 
         setTimeout(()=>{
-            heart.remove();
-        },3000);
+            sparkle.remove();
+        },2200);
 
     }
 
 }
 
 
-
-/* =========================
+/* =====================================================
    GIFT
-========================= */
+===================================================== */
 
 function openGift(){
 
@@ -1152,9 +1615,9 @@ function openGift(){
 
     gift.classList.add("open");
 
-    createConfetti(220);
+    createConfetti(250);
 
-    createFloatingHearts(60);
+    createSparkles(60);
 
     setTimeout(()=>{
 
@@ -1165,52 +1628,50 @@ function openGift(){
             block:"center"
         });
 
-    },800);
+    },850);
 
 }
 
 
-
-/* =========================
+/* =====================================================
    CONFETTI
-========================= */
+===================================================== */
 
 function createConfetti(amount){
 
     for(let i=0;i<amount;i++){
 
-        const c =
+        const confetti =
             document.createElement("div");
 
-        c.className="confetti";
+        confetti.className="confetti";
 
-        c.style.left =
+        confetti.style.left =
             Math.random()*100+"vw";
 
-        c.style.background =
+        confetti.style.background =
             `hsl(${Math.random()*360},90%,70%)`;
 
-        c.style.animationDuration =
+        confetti.style.animationDuration =
             (3+Math.random()*3)+"s";
 
-        c.style.animationDelay =
+        confetti.style.animationDelay =
             Math.random()*1.5+"s";
 
-        document.body.appendChild(c);
+        document.body.appendChild(confetti);
 
         setTimeout(()=>{
-            c.remove();
-        },7000);
+            confetti.remove();
+        },7500);
 
     }
 
 }
 
 
-
-/* =========================
+/* =====================================================
    FIREWORKS
-========================= */
+===================================================== */
 
 const canvas =
     document.getElementById("fireworks");
@@ -1220,7 +1681,8 @@ const ctx =
 
 let particles=[];
 
-function resize(){
+
+function resizeCanvas(){
 
     canvas.width =
         canvas.offsetWidth;
@@ -1230,9 +1692,12 @@ function resize(){
 
 }
 
-window.addEventListener("resize",resize);
+window.addEventListener(
+    "resize",
+    resizeCanvas
+);
 
-resize();
+resizeCanvas();
 
 
 class Particle{
@@ -1263,25 +1728,28 @@ class Particle{
 
     }
 
+
     update(){
 
-        this.x+=this.vx;
+        this.x += this.vx;
 
-        this.y+=this.vy;
+        this.y += this.vy;
 
-        this.vy+=.055;
+        this.vy += .055;
 
-        this.vx*=.985;
+        this.vx *= .985;
 
-        this.vy*=.985;
+        this.vy *= .985;
 
-        this.alpha-=.012;
+        this.alpha -= .012;
 
     }
 
+
     draw(){
 
-        ctx.globalAlpha=this.alpha;
+        ctx.globalAlpha =
+            this.alpha;
 
         ctx.beginPath();
 
@@ -1293,7 +1761,8 @@ class Particle{
             Math.PI*2
         );
 
-        ctx.fillStyle=this.color;
+        ctx.fillStyle =
+            this.color;
 
         ctx.fill();
 
@@ -1338,7 +1807,7 @@ function createFirework(){
 }
 
 
-function animate(){
+function animateFireworks(){
 
     ctx.clearRect(
         0,
@@ -1347,30 +1816,39 @@ function animate(){
         canvas.height
     );
 
-    particles.forEach((p,index)=>{
+    particles.forEach(
+        (particle,index)=>{
 
-        p.update();
-        p.draw();
+            particle.update();
 
-        if(p.alpha<=0){
-            particles.splice(index,1);
+            particle.draw();
+
+            if(particle.alpha<=0){
+
+                particles.splice(index,1);
+
+            }
+
         }
+    );
 
-    });
-
-    requestAnimationFrame(animate);
+    requestAnimationFrame(
+        animateFireworks
+    );
 
 }
 
 
 function startFireworks(){
 
-    animate();
+    animateFireworks();
 
     createFirework();
 
     setInterval(()=>{
+
         createFirework();
+
     },900);
 
 }
